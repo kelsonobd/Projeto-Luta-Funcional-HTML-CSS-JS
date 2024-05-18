@@ -9,7 +9,7 @@ const defaultCharacter = {
 const createKnight = (name) => {
     return {
         ...defaultCharacter,
-        name,
+        name: '',
         life: 100,
         maxLife: 100,
         attack: 10,
@@ -74,7 +74,7 @@ const stage = {
         this.fighter1El.querySelector('.bar').style.width = `${f1Pct}%`;
 
                 //Atualizar as informações do fighter  2
-        this.fighter2El.querySelector('.name').innerHTML = `${this.fighter1.name} - ${this.fighter2.life.toFixed(1)} HP`;
+        this.fighter2El.querySelector('.name').innerHTML = `${this.fighter2.name} - ${this.fighter2.life.toFixed(1)} HP`;
         let f2Pct = (this.fighter2.life / this.fighter2.maxLife) * 100;
         this.fighter2El.querySelector('.bar').style.width = `${f2Pct}%`;
 
@@ -82,7 +82,7 @@ const stage = {
     },
 
     doAttack(attacking, attacked) {
-        console.log(`${attacking.name} atacando${attacked.name}`)
+        console.log(`${attacking.name} atacando ${attacked.name}`)
 
         this.update();
 
